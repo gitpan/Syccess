@@ -1,0 +1,144 @@
+package Syccess::Field;
+BEGIN {
+  $Syccess::Field::AUTHORITY = 'cpan:GETTY';
+}
+# ABSTRACT: Syccess field
+$Syccess::Field::VERSION = '0.001';
+use Moo;
+use Module::Runtime qw( use_module );
+use Module::Load::Conditional qw( can_load );
+
+has syccess => (
+  is => 'ro',
+  required => 1,
+  weak_ref => 1,
+);
+
+has name => (
+  is => 'ro',
+  required => 1,
+);
+
+has label => (
+  is => 'lazy',
+  init_arg => undef,
+);
+
+sub _build_label {
+  my ( $self ) = @_;
+  if (ref $self->validators_list eq 'HASH') {
+    return $self->validators_list->{label}
+      if defined $self->validators_list->{label};
+  } else {
+    my @validators_list = @{$self->validators_list};
+    while (@validators_list) {
+      my ( $key, $arg ) = splice(@validators_list,0,2);
+      return $arg if $key eq 'label';
+    }
+  }
+  return ucfirst($self->name);
+}
+
+has validators_args => (
+  is => 'ro',
+  predicate => 1,
+);
+
+has validators_list => (
+  is => 'ro',
+  required => 1,
+  init_arg => 'validators',
+);
+
+has validators => (
+  is => 'lazy',
+  init_arg => undef,
+);
+
+sub _build_validators {
+  my ( $self ) = @_;
+  my %validators_args = $self->has_validators_args
+    ? (%{$self->validators_args}) : ();
+  my @validators;
+  my @validators_list = ref $self->validators_list eq 'HASH'
+    ? ( map { $_, $self->validators_list->{$_} }
+        sort { $a cmp $b }
+        keys %{$self->validators_list} )
+    : ( @{$self->validators_list} );
+  while (@validators_list) {
+    my ( $key, $arg ) = splice(@validators_list,0,2);
+    next if $key eq 'label';
+    my %args;
+    if (ref $arg eq 'HASH') {
+      %args = %{$arg};
+    } else {
+      $args{arg} = $arg;
+    }
+    $args{syccess_field} = $self;
+    push @validators, $self->load_class_by_key($key)->new(
+      %validators_args, %args
+    );
+  }
+  return [ @validators ];
+}
+
+sub load_class_by_key {
+  my ( $self, $key ) = @_;
+  my $class;
+  if ($key =~ m/::/) {
+    if (can_load( modules => { $key, 0 } )) {
+      $class = $key;
+    }
+  } else {
+    my $module = $key;
+    $module =~ s/_([a-z])/\U$1/;
+    $module = ucfirst($module);
+    my @namespaces = @{$self->syccess->validator_namespaces};
+    for my $namespace (@namespaces) {
+      my $can_class = $namespace.'::'.$module;
+      if (can_load( modules => { $can_class, 0 } )) {
+        $class = $can_class;
+        last;
+      }
+    }
+  }
+  die __PACKAGE__." can't load validator for ".$key unless $class;
+  return use_module($class);
+}
+
+sub validate {
+  my ( $self, %params ) = @_;
+  my @validators = @{$self->validators};
+  my @messages;
+  for my $validator (@validators) {
+    push @messages, $validator->validate(%params);
+  }
+  return @messages;
+}
+
+1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+Syccess::Field - Syccess field
+
+=head1 VERSION
+
+version 0.001
+
+=head1 AUTHOR
+
+Torsten Raudssus <torsten@raudss.us>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by Torsten Raudssus.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

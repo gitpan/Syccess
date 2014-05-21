@@ -1,0 +1,42 @@
+==================================================
+Changes from 1740-08-06 00:00:00 +0000 to present.
+==================================================
+
+------------------------------------------
+version 0.001 at 2014-05-21 22:01:13 +0000
+------------------------------------------
+
+  Change: 8311234f6cff4c50018202a1e43f22a35f1afa7a
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-21 23:59:28 +0000
+
+    Added travis config 
+
+  Change: 5cbd700a9080e84e7aff2190d1a6f29bee86a9b2
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-21 23:58:46 +0000
+
+    Added label concept, more tests, is number check 
+
+  Change: d0c9a80701d15829bb759dcc525f275af1b11cbd
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-21 18:31:33 +0000
+
+    SYNOPSIS SYNOPSIS SYNOPSIS SYNOPSIS SYNOPSIS SYNOPSIS SYNOPSIS
+    SYNOPSIS SYNOPSIS 
+
+  Change: 17f2b20ff8349f3450fba27b17c17dabc9748605
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-21 18:08:33 +0000
+
+    First release, required field implementation working 
+
+  Change: 19adf8260e2373181129cb692d4bd03ec1de3b14
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-13 17:17:54 +0000
+
+    initial commit 
+
+================
+End of releases.
+================
