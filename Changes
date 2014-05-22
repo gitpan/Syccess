@@ -1,10 +1,28 @@
 ==================================================
-Changes from 1740-08-06 00:00:00 +0000 to present.
+Changes from 1740-08-07 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.001 at 2014-05-21 22:01:13 +0000
+version 0.002 at 2014-05-22 17:07:38 +0000
 ------------------------------------------
+
+  Change: 32ab873775e1e37515f03d53964aa22a7232cf6f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-22 19:06:59 +0000
+
+    Added SyccessX::Validator namespace as fallback 
+
+  Change: 35fbb2266ebd010fb96f385e16ad1bc668366519
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-22 17:27:35 +0000
+
+    Implemented In validator 
+
+  Change: ca9001d96c762effbd31a2fa8b196b1de19207a4
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-22 17:18:45 +0000
+
+    Added Regex validator 
 
   Change: 8311234f6cff4c50018202a1e43f22a35f1afa7a
   Author: Torsten Raudssus <torsten@raudss.us>

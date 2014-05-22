@@ -13,12 +13,16 @@ lib/Syccess/Error.pm
 lib/Syccess/Field.pm
 lib/Syccess/Result.pm
 lib/Syccess/Validator.pm
+lib/Syccess/Validator/In.pm
 lib/Syccess/Validator/IsNumber.pm
 lib/Syccess/Validator/Length.pm
+lib/Syccess/Validator/Regex.pm
 lib/Syccess/Validator/Required.pm
 lib/Syccess/ValidatorSimple.pm
+t/in.t
 t/is_number.t
 t/length.t
 t/load.t
+t/regex.t
 t/release-pod-syntax.t
 t/required.t

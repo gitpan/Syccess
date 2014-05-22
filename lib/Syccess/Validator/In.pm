@@ -1,11 +1,11 @@
-package Syccess::Validator::IsNumber;
+package Syccess::Validator::In;
 BEGIN {
-  $Syccess::Validator::IsNumber::AUTHORITY = 'cpan:GETTY';
+  $Syccess::Validator::In::AUTHORITY = 'cpan:GETTY';
 }
-# ABSTRACT: A validator to check if value is a number
-$Syccess::Validator::IsNumber::VERSION = '0.002';
+# ABSTRACT: A validator to check if a value is inside of a list of values
+$Syccess::Validator::In::VERSION = '0.002';
 use Moo;
-use Scalar::Util qw( looks_like_number );
+use Carp qw( croak );
 
 with qw(
   Syccess::ValidatorSimple
@@ -15,13 +15,19 @@ has message => (
   is => 'lazy',
 );
 
+sub BUILD {
+  my ( $self ) = @_;
+  croak __PACKAGE__." arg must be ARRAY" unless ref $self->arg eq 'ARRAY';
+}
+
 sub _build_message {
-  return '%s must be a number.';
+  return 'This value for %s is not allowed.';
 }
 
 sub validator {
   my ( $self, $value ) = @_;
-  return $self->message unless looks_like_number($value);
+  my @values = @{$self->arg};
+  return $self->message unless grep { $value eq $_ } @values;
   return;
 }
 
@@ -33,7 +39,7 @@ __END__
 
 =head1 NAME
 
-Syccess::Validator::IsNumber - A validator to check if value is a number
+Syccess::Validator::In - A validator to check if a value is inside of a list of values
 
 =head1 VERSION
 
@@ -43,7 +49,7 @@ version 0.002
 
   Syccess->new(
     fields => [
-      foo => [ is_number => 1 ],
+      foo => [ in => [qw( a b c )] ],
     ],
   );
 

@@ -1,27 +1,28 @@
-package Syccess::Validator::Required;
+package Syccess::Validator::Regex;
 BEGIN {
-  $Syccess::Validator::Required::AUTHORITY = 'cpan:GETTY';
+  $Syccess::Validator::Regex::AUTHORITY = 'cpan:GETTY';
 }
-# ABSTRACT: A validator to check for a required field
-$Syccess::Validator::Required::VERSION = '0.002';
+# ABSTRACT: A validator to check with a regex
+$Syccess::Validator::Regex::VERSION = '0.002';
 use Moo;
 
 with qw(
-  Syccess::Validator
+  Syccess::ValidatorSimple
 );
 
 has message => (
   is => 'lazy',
 );
 
-sub _build_message { '%s is required.' }
+sub _build_message {
+  return 'Your value for %s is not valid.';
+}
 
-sub validate {
-  my ( $self, %params ) = @_;
-  my $name = $self->syccess_field->name;
-  return $self->message if !exists($params{$name})
-    || !defined($params{$name})
-    || $params{$name} eq '';
+sub validator {
+  my ( $self, $value ) = @_;
+  my $regex = $self->arg;
+  my $r = ref $regex eq 'Regexp' ? $regex : qr{$regex};
+  return $self->message unless $value =~ m/$r/;
   return;
 }
 
@@ -33,7 +34,7 @@ __END__
 
 =head1 NAME
 
-Syccess::Validator::Required - A validator to check for a required field
+Syccess::Validator::Regex - A validator to check with a regex
 
 =head1 VERSION
 
@@ -43,18 +44,15 @@ version 0.002
 
   Syccess->new(
     fields => [
-      foo => [ required => 1 ],
-      bar => [ required => {
-        message => 'You have 5 seconds to comply.'
+      foo => [ regex => qr/^\w+$/ ],
+      bar => [ regex => {
+        arg => '^[a-z]+$', # will be converted to regexp
+        message => 'We only allow lowercase letters on this field.',
       } ],
     ],
   );
 
 =head1 DESCRIPTION
-
-This validator allows to check if a field is required. The default error
-message is B<%s is required.> and can be overriden via the B<message>
-parameter.
 
 =encoding utf8
 

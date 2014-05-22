@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Easy Validation Handler
-$Syccess::VERSION = '0.001';
+$Syccess::VERSION = '0.002';
 use Moo;
 use Module::Runtime qw( use_module );
 use Tie::IxHash;
@@ -14,7 +14,11 @@ has validator_namespaces => (
 
 sub _build_validator_namespaces {
   my ( $self ) = @_;
-  return [ @{$self->custom_validator_namespaces}, 'Syccess::Validator' ];
+  return [
+    @{$self->custom_validator_namespaces},
+    'Syccess::Validator',
+    'SyccessX::Validator',
+  ];
 }
 
 has custom_validator_namespaces => (
@@ -117,7 +121,7 @@ Syccess - Easy Validation Handler
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
