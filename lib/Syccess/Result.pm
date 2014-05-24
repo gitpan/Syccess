@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Result::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validation process result
-$Syccess::Result::VERSION = '0.002';
+$Syccess::Result::VERSION = '0.003';
 use Moo;
 use Module::Runtime qw( use_module );
 
@@ -24,13 +24,36 @@ has success => (
 
 sub _build_success {
   my ( $self ) = @_;
-  return scalar @{$self->errors} ? 0 : 1;
+  return $self->error_count ? 0 : 1;
+}
+
+has error_count => (
+  is => 'lazy',
+  init_arg => undef,
+);
+
+sub _build_error_count {
+  my ( $self ) = @_;
+  return scalar @{$self->errors};
 }
 
 has errors => (
   is => 'lazy',
   init_arg => undef,
 );
+
+around errors => sub {
+  my ( $orig, $self, @args ) = @_;
+  my @errors = @{$self->$orig()};
+  return [ @errors ] unless scalar @args > 0;
+  my @args_errors;
+  for my $error (@errors) {
+    for my $arg (@args) {
+      push @args_errors, $error if $error->syccess_field->name eq $arg;
+    }
+  }
+  return [ @args_errors ];
+};
 
 sub _build_errors {
   my ( $self ) = @_;
@@ -81,7 +104,7 @@ Syccess::Result - A validation process result
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 

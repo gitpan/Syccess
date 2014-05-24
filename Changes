@@ -1,10 +1,34 @@
 ==================================================
-Changes from 1740-08-07 00:00:00 +0000 to present.
+Changes from 1740-08-09 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.002 at 2014-05-22 17:07:38 +0000
+version 0.003 at 2014-05-24 18:54:07 +0000
 ------------------------------------------
+
+  Change: db300e10a7468b94d934380837481ff68d00bcc5
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-24 20:50:07 +0000
+
+    Added functionality to errors function to be limited by field 
+
+  Change: b0e2cfb8701bbe5e8051e5d6a1fd26d3554d8e02
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-24 13:15:37 +0000
+
+    Added missing requirement 
+
+  Change: 3dfb52b87a6b041f4e4de8709802a8a448706e4b
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-23 11:06:33 +0000
+
+    Adding error count 
+
+  Change: 09e31d7cab71239c568a68d42a933694ccc25e88
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-22 19:28:08 +0000
+
+    Updated load test 
 
   Change: 32ab873775e1e37515f03d53964aa22a7232cf6f
   Author: Torsten Raudssus <torsten@raudss.us>

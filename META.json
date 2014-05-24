@@ -29,7 +29,8 @@
             "Module::Load::Conditional" : "0",
             "Module::Runtime" : "0",
             "Moo" : "0",
-            "Scalar::Util" : "0"
+            "Scalar::Util" : "0",
+            "Tie::IxHash" : "0"
          }
       },
       "test" : {
@@ -48,7 +49,7 @@
          "web" : "https://github.com/SyContent/Syccess"
       }
    },
-   "version" : "0.002",
+   "version" : "0.003",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018001"

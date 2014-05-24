@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Required::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check for a required field
-$Syccess::Validator::Required::VERSION = '0.002';
+$Syccess::Validator::Required::VERSION = '0.003';
 use Moo;
 
 with qw(
@@ -37,7 +37,7 @@ Syccess::Validator::Required - A validator to check for a required field
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

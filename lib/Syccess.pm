@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Easy Validation Handler
-$Syccess::VERSION = '0.002';
+$Syccess::VERSION = '0.003';
 use Moo;
 use Module::Runtime qw( use_module );
 use Tie::IxHash;
@@ -121,7 +121,7 @@ Syccess - Easy Validation Handler
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

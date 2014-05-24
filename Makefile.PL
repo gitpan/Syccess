@@ -24,13 +24,14 @@ my %WriteMakefileArgs = (
     "Module::Load::Conditional" => 0,
     "Module::Runtime" => 0,
     "Moo" => 0,
-    "Scalar::Util" => 0
+    "Scalar::Util" => 0,
+    "Tie::IxHash" => 0
   },
   "TEST_REQUIRES" => {
     "Test::LoadAllModules" => "0.021",
     "Test::More" => "0.96"
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -43,7 +44,8 @@ my %FallbackPrereqs = (
   "Moo" => 0,
   "Scalar::Util" => 0,
   "Test::LoadAllModules" => "0.021",
-  "Test::More" => "0.96"
+  "Test::More" => "0.96",
+  "Tie::IxHash" => 0
 );
 
 

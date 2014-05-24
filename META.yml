@@ -19,10 +19,11 @@ requires:
   Module::Runtime: '0'
   Moo: '0'
   Scalar::Util: '0'
+  Tie::IxHash: '0'
 resources:
   homepage: https://github.com/SyContent/Syccess
   repository: https://github.com/SyContent/Syccess.git
-version: '0.002'
+version: '0.003'
 x_Dist_Zilla:
   perl:
     version: '5.018001'
