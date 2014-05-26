@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::In::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check if a value is inside of a list of values
-$Syccess::Validator::In::VERSION = '0.003';
+$Syccess::Validator::In::VERSION = '0.004';
 use Moo;
 use Carp qw( croak );
 
@@ -43,7 +43,7 @@ Syccess::Validator::In - A validator to check if a value is inside of a list of 
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

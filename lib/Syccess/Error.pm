@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Error::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess error message
-$Syccess::Error::VERSION = '0.003';
+$Syccess::Error::VERSION = '0.004';
 use Moo;
 
 has syccess_field => (
@@ -54,7 +54,7 @@ Syccess::Error - Syccess error message
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 AUTHOR
 

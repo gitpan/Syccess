@@ -1,9 +1,9 @@
-package Syccess::Validator::Required;
+package Syccess::Validator::Code;
 BEGIN {
-  $Syccess::Validator::Required::AUTHORITY = 'cpan:GETTY';
+  $Syccess::Validator::Code::AUTHORITY = 'cpan:GETTY';
 }
-# ABSTRACT: A validator to check for a required field
-$Syccess::Validator::Required::VERSION = '0.004';
+# ABSTRACT: A validator to check a value through a simple coderef
+$Syccess::Validator::Code::VERSION = '0.004';
 use Moo;
 
 with qw(
@@ -15,16 +15,22 @@ has message => (
 );
 
 sub _build_message {
-  return '%s is required.';
+  return 'Your value for %s is not valid.';
 }
 
 sub validate {
   my ( $self, %params ) = @_;
   my $name = $self->syccess_field->name;
-  return $self->message if !exists($params{$name})
+  return if !exists($params{$name})
     || !defined($params{$name})
     || $params{$name} eq '';
-  return;
+  my $value = $params{$name};
+  my $code = $self->arg;
+  my @return;
+  for ($value) {
+    push @return, $code->($self,%params);
+  }
+  return map { !defined $_ ? $self->message : $_ } @return;
 }
 
 1;
@@ -35,7 +41,7 @@ __END__
 
 =head1 NAME
 
-Syccess::Validator::Required - A validator to check for a required field
+Syccess::Validator::Code - A validator to check a value through a simple coderef
 
 =head1 VERSION
 
@@ -45,18 +51,15 @@ version 0.004
 
   Syccess->new(
     fields => [
-      foo => [ required => 1 ],
-      bar => [ required => {
+      foo => [ code => sub { $_ > 3 ? () : ('You are WRONG!') } ],
+      bar => [ code => {
+        arg => sub { $_ > 5 ? () : (undef) },
         message => 'You have 5 seconds to comply.'
       } ],
     ],
   );
 
 =head1 DESCRIPTION
-
-This validator allows to check if a field is required. The default error
-message is B<%s is required.> and can be overriden via the B<message>
-parameter.
 
 =encoding utf8
 

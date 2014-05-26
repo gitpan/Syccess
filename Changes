@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1740-08-09 00:00:00 +0000 to present.
+Changes from 1740-08-11 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.003 at 2014-05-24 18:54:07 +0000
+version 0.004 at 2014-05-26 19:09:26 +0000
 ------------------------------------------
+
+  Change: dc04f5be2a8d339b241373dd1e513c3654805817
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-05-26 21:06:16 +0000
+
+    Added Code ref validator 
 
   Change: db300e10a7468b94d934380837481ff68d00bcc5
   Author: Torsten Raudssus <torsten@raudss.us>
