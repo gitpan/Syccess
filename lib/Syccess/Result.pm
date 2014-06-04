@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Result::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validation process result
-$Syccess::Result::VERSION = '0.005';
+$Syccess::Result::VERSION = '0.006';
 use Moo;
 use Module::Runtime qw( use_module );
 
@@ -122,7 +122,47 @@ Syccess::Result - A validation process result
 
 =head1 VERSION
 
-version 0.005
+version 0.006
+
+=head1 SYNOPSIS
+
+=head1 DESCRIPTION
+
+=head1 METHODS
+
+=head2 errors
+
+Gives back an ArrayRef of all errors, if no parameter is given. If you give
+a list of field names as parameters, then you will only get the errors of
+those specific fields.
+
+=head2 error_count
+
+Gives back the amount of errors.
+
+=head2 success
+
+Gives back a Bool value which indicates if the result of the validation was
+a general success or not, or other said, if there are no errors.
+
+=encoding utf8
+
+=head1 SUPPORT
+
+IRC
+
+  Join #sycontent on irc.perl.org. Highlight Getty for fast reaction :).
+
+Repository
+
+  http://github.com/SyContent/Syccess
+  Pull request and additional contributors are welcome
+
+Issue Tracker
+
+  http://github.com/SyContent/Syccess/issues
+
+=cut
 
 =head1 AUTHOR
 

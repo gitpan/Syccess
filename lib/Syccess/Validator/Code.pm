@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Code::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check a value through a simple coderef
-$Syccess::Validator::Code::VERSION = '0.005';
+$Syccess::Validator::Code::VERSION = '0.006';
 use Moo;
 
 with qw(
@@ -45,7 +45,7 @@ Syccess::Validator::Code - A validator to check a value through a simple coderef
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
