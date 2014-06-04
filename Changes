@@ -3,8 +3,14 @@ Changes from 1740-08-20 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.006 at 2014-06-04 02:59:55 +0000
+version 0.007 at 2014-06-04 15:34:49 +0000
 ------------------------------------------
+
+  Change: 6fdb9cc2b3f90754f873a6e7d017971e14b9c76f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-06-04 17:34:33 +0000
+
+    MORE DOCUMENTATION!!!! AAAAHHHH 
 
   Change: 3494523b93f4266e42f0aa8013f8c4fbe0068097
   Author: Torsten Raudssus <torsten@raudss.us>
