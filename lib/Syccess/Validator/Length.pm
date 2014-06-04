@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Length::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check the length of the value in chars
-$Syccess::Validator::Length::VERSION = '0.004';
+$Syccess::Validator::Length::VERSION = '0.005';
 use Moo;
 use Carp qw( croak );
 
@@ -96,7 +96,7 @@ Syccess::Validator::Length - A validator to check the length of the value in cha
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 

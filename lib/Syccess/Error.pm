@@ -3,8 +3,12 @@ BEGIN {
   $Syccess::Error::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess error message
-$Syccess::Error::VERSION = '0.004';
+$Syccess::Error::VERSION = '0.005';
 use Moo;
+
+with qw(
+  MooX::Traits
+);
 
 has syccess_field => (
   is => 'ro',
@@ -54,7 +58,7 @@ Syccess::Error - Syccess error message
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 

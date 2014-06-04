@@ -3,10 +3,14 @@ BEGIN {
   $Syccess::Field::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess field
-$Syccess::Field::VERSION = '0.004';
+$Syccess::Field::VERSION = '0.005';
 use Moo;
 use Module::Runtime qw( use_module );
 use Module::Load::Conditional qw( can_load );
+
+with qw(
+  MooX::Traits
+);
 
 has syccess => (
   is => 'ro',
@@ -128,7 +132,7 @@ Syccess::Field - Syccess field
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 

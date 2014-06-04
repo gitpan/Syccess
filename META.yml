@@ -18,12 +18,13 @@ requires:
   Module::Load::Conditional: '0'
   Module::Runtime: '0'
   Moo: '0'
+  MooX::Traits: '0'
   Scalar::Util: '0'
   Tie::IxHash: '0'
 resources:
   homepage: https://github.com/SyContent/Syccess
   repository: https://github.com/SyContent/Syccess.git
-version: '0.004'
+version: '0.005'
 x_Dist_Zilla:
   perl:
     version: '5.018001'
