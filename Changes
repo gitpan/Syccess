@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1740-08-20 00:00:00 +0000 to present.
+Changes from 1740-08-21 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.007 at 2014-06-04 15:34:49 +0000
+version 0.008 at 2014-06-05 22:25:02 +0000
 ------------------------------------------
+
+  Change: f920fb07b5f6806e0e7ead31539653d7c9cf94d2
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-06-06 00:22:18 +0000
+
+    More documentation! Now 50% off! 
 
   Change: 6fdb9cc2b3f90754f873a6e7d017971e14b9c76f
   Author: Torsten Raudssus <torsten@raudss.us>

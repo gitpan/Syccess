@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Error::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess error message
-$Syccess::Error::VERSION = '0.007';
+$Syccess::Error::VERSION = '0.008';
 use Moo;
 
 with qw(
@@ -58,11 +58,26 @@ Syccess::Error - Syccess error message
 
 =head1 VERSION
 
-version 0.007
-
-=head1 SYNOPSIS
+version 0.008
 
 =head1 DESCRIPTION
+
+This class is used to store an error and will be given back on the call of
+L<Syccess::Field/errors> or L<Syccess::Result/errors>.
+
+=head1 ATTRIBUTES
+
+=head2 message
+
+Contains the actual resulting error message.
+
+=head2 syccess_field
+
+References to the L<Syccess::Field> where this error comes from.
+
+=head2 syccess_result
+
+References to the L<Syccess::Result> where this error comes from.
 
 =encoding utf8
 

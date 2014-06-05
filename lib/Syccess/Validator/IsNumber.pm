@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::IsNumber::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check if value is a number
-$Syccess::Validator::IsNumber::VERSION = '0.007';
+$Syccess::Validator::IsNumber::VERSION = '0.008';
 use Moo;
 use Scalar::Util qw( looks_like_number );
 
@@ -37,7 +37,7 @@ Syccess::Validator::IsNumber - A validator to check if value is a number
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SYNOPSIS
 

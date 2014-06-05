@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess validator
-$Syccess::Validator::VERSION = '0.007';
+$Syccess::Validator::VERSION = '0.008';
 use Moo::Role;
 
 requires qw(
@@ -35,7 +35,7 @@ Syccess::Validator - Syccess validator
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SYNOPSIS
 
@@ -72,6 +72,19 @@ Normally you don't need this role, most validation requirements will be
 fulfilled with the B<Syccess::ValidatorSimple>. The case for this role is only
 given, if you need also access to values of other fields to decide the
 success.
+
+By default, the argument for the validator will be stored in L</arg>, except
+if its a HashRef, in this case, it will be dereferenced and be used as
+arguments for the creation of the validator. Which means:
+
+  SyForm->new( fields => [ length => 4 ] );
+
+is the same as doing:
+
+  SyForm->new( fields => [ length => { arg => 4 } ] );
+
+This way allows to mix complex and straight forward usages. The core validator
+L<Syccess::Validator::Length> is a very good example for this.
 
 =head1 ATTRIBUTES
 
