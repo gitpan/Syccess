@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Required::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check for a required field
-$Syccess::Validator::Required::VERSION = '0.008';
+$Syccess::Validator::Required::VERSION = '0.100';
 use Moo;
 
 with qw(
@@ -39,7 +39,7 @@ Syccess::Validator::Required - A validator to check for a required field
 
 =head1 VERSION
 
-version 0.008
+version 0.100
 
 =head1 SYNOPSIS
 
@@ -55,8 +55,15 @@ version 0.008
 =head1 DESCRIPTION
 
 This validator allows to check if a field is required. The default error
-message is B<%s is required.> and can be overriden via the B<message>
+message is B<'%s is required.'> and can be overriden via the L</message>
 parameter.
+
+=head1 ATTRIBUTES
+
+=head2 message
+
+This contains the error message or the format for the error message
+generation. See L<Syccess::Error/validator_message>.
 
 =encoding utf8
 

@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Call::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check via call to a method
-$Syccess::Validator::Call::VERSION = '0.008';
+$Syccess::Validator::Call::VERSION = '0.100';
 use Moo;
 use Carp qw( croak );
 
@@ -56,7 +56,7 @@ Syccess::Validator::Call - A validator to check via call to a method
 
 =head1 VERSION
 
-version 0.008
+version 0.100
 
 =head1 SYNOPSIS
 
@@ -72,6 +72,17 @@ version 0.008
   );
 
 =head1 DESCRIPTION
+
+This validator allows checking against a method call on an object. If used
+with the B<not> parameter, it will see success if the called method gives back
+a B<false> value, else it will succeed on a B<true> value.
+
+=head1 ATTRIBUTES
+
+=head2 message
+
+This contains the error message or the format for the error message
+generation. See L<Syccess::Error/validator_message>.
 
 =encoding utf8
 

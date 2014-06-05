@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Length::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check the length of the value in chars
-$Syccess::Validator::Length::VERSION = '0.008';
+$Syccess::Validator::Length::VERSION = '0.100';
 use Moo;
 use Carp qw( croak );
 
@@ -96,7 +96,7 @@ Syccess::Validator::Length - A validator to check the length of the value in cha
 
 =head1 VERSION
 
-version 0.008
+version 0.100
 
 =head1 SYNOPSIS
 
@@ -115,7 +115,27 @@ version 0.008
 =head1 DESCRIPTION
 
 This validator allows to check for the amount of characters in the value.
-The default error message depends on the parameter given.
+The default error message depends on the parameter given. The default
+functionality is using the parameter as the required length for the value.
+Longer or shorter would be denied. This can't be combined with L</min> or
+L</max>.
+
+=head1 ATTRIBUTES
+
+=head2 min
+
+Given this parameter, allows to define a minimum length for the value. This
+can be combined with L</max>.
+
+=head2 max
+
+Given this parameter, allows to define a maximum length for the value. This
+can be combined with L</min>.
+
+=head2 message
+
+This contains the error message or the format for the error message
+generation. See L<Syccess::Error/validator_message>.
 
 =encoding utf8
 

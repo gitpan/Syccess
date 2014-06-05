@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Regex::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check with a regex
-$Syccess::Validator::Regex::VERSION = '0.008';
+$Syccess::Validator::Regex::VERSION = '0.100';
 use Moo;
 
 with qw(
@@ -38,7 +38,7 @@ Syccess::Validator::Regex - A validator to check with a regex
 
 =head1 VERSION
 
-version 0.008
+version 0.100
 
 =head1 SYNOPSIS
 
@@ -53,6 +53,17 @@ version 0.008
   );
 
 =head1 DESCRIPTION
+
+This validator allows checking against a regular expression. The regular
+expression can be given as Regex or plain scalar, which will be converted
+to a Regex.
+
+=head1 ATTRIBUTES
+
+=head2 message
+
+This contains the error message or the format for the error message
+generation. See L<Syccess::Error/validator_message>.
 
 =encoding utf8
 

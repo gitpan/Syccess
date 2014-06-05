@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Code::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check a value through a simple coderef
-$Syccess::Validator::Code::VERSION = '0.008';
+$Syccess::Validator::Code::VERSION = '0.100';
 use Moo;
 
 with qw(
@@ -45,7 +45,7 @@ Syccess::Validator::Code - A validator to check a value through a simple coderef
 
 =head1 VERSION
 
-version 0.008
+version 0.100
 
 =head1 SYNOPSIS
 
@@ -60,6 +60,22 @@ version 0.008
   );
 
 =head1 DESCRIPTION
+
+This validator allows checking against a CodeRef. The CodeRef will be getting
+all parameters on B<@_> as Hash, and the specific parameter value for to check
+against will be in B<$_>, so the coderef can decide which way he want to check.
+
+The CodeRef should give back nothing (not even B<undef>) if its a success. Else
+if should give back B<undef> to release the error message given on L</message>
+or the default error message B<'Your value for %s is not valid.'>. Alternative
+it can also give back a string which will be used as B<message> for the error.
+
+=head1 ATTRIBUTES
+
+=head2 message
+
+This contains the error message or the format for the error message
+generation. See L<Syccess::Error/validator_message>.
 
 =encoding utf8
 

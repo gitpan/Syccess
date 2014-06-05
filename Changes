@@ -3,8 +3,20 @@ Changes from 1740-08-21 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.008 at 2014-06-05 22:25:02 +0000
+version 0.100 at 2014-06-05 23:18:53 +0000
 ------------------------------------------
+
+  Change: 94500e26d66d220b32934d9394a559df30d490c8
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-06-06 01:18:17 +0000
+
+    Ok the validators also need some documentation..... 
+
+  Change: c5081161131bdb6df8e1acd79fb5dad1845f8215
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-06-06 00:46:47 +0000
+
+    Small corrections 
 
   Change: f920fb07b5f6806e0e7ead31539653d7c9cf94d2
   Author: Torsten Raudssus <torsten@raudss.us>

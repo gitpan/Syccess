@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::In::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check if a value is inside of a list of values
-$Syccess::Validator::In::VERSION = '0.008';
+$Syccess::Validator::In::VERSION = '0.100';
 use Moo;
 use Carp qw( croak );
 
@@ -43,7 +43,7 @@ Syccess::Validator::In - A validator to check if a value is inside of a list of 
 
 =head1 VERSION
 
-version 0.008
+version 0.100
 
 =head1 SYNOPSIS
 
@@ -54,6 +54,16 @@ version 0.008
   );
 
 =head1 DESCRIPTION
+
+This validator allows to define a specific list of values which are valid. They
+are given as ArrayRef.
+
+=head1 ATTRIBUTES
+
+=head2 message
+
+This contains the error message or the format for the error message
+generation. See L<Syccess::Error/validator_message>.
 
 =encoding utf8
 

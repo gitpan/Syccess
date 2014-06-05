@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::IsNumber::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check if value is a number
-$Syccess::Validator::IsNumber::VERSION = '0.008';
+$Syccess::Validator::IsNumber::VERSION = '0.100';
 use Moo;
 use Scalar::Util qw( looks_like_number );
 
@@ -37,17 +37,29 @@ Syccess::Validator::IsNumber - A validator to check if value is a number
 
 =head1 VERSION
 
-version 0.008
+version 0.100
 
 =head1 SYNOPSIS
 
   Syccess->new(
     fields => [
       foo => [ is_number => 1 ],
+      bar => [ is_number => { message => 'This is not cool!' } ],
     ],
   );
 
 =head1 DESCRIPTION
+
+This simple validator only checks if the given value is a number (using
+I<looks_like_number> of L<Scalar::Util>). The parameter given will not be used,
+but as usual you can override the error message by given B<message>.
+
+=head1 ATTRIBUTES
+
+=head2 message
+
+This contains the error message or the format for the error message
+generation. See L<Syccess::Error/validator_message>.
 
 =encoding utf8
 
