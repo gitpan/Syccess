@@ -3,8 +3,26 @@ Changes from 1740-08-21 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.100 at 2014-06-05 23:18:53 +0000
+version 0.101 at 2014-06-05 23:52:12 +0000
 ------------------------------------------
+
+  Change: 915a700637ad1396d4300a647cba30956662ab7d
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-06-06 01:33:31 +0000
+
+    Nope.. 
+
+  Change: 486a3c02e8d527036e58694cfce5d768391e3c45
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-06-06 01:20:50 +0000
+
+    5.20 on travis already? 
+
+  Change: 95d1fed89b4302af133041d96137727e174f4751
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-06-06 01:19:46 +0000
+
+    Yeah sure, NOW i see the typo in the doc 
 
   Change: 94500e26d66d220b32934d9394a559df30d490c8
   Author: Torsten Raudssus <torsten@raudss.us>

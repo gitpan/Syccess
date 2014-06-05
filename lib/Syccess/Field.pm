@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Field::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess field
-$Syccess::Field::VERSION = '0.100';
+$Syccess::Field::VERSION = '0.101';
 use Moo;
 use Module::Runtime qw( use_module );
 use Module::Load::Conditional qw( can_load );
@@ -132,7 +132,7 @@ Syccess::Field - Syccess field
 
 =head1 VERSION
 
-version 0.100
+version 0.101
 
 =head1 DESCRIPTION
 

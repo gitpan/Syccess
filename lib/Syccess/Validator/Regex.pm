@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Regex::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check with a regex
-$Syccess::Validator::Regex::VERSION = '0.100';
+$Syccess::Validator::Regex::VERSION = '0.101';
 use Moo;
 
 with qw(
@@ -38,7 +38,7 @@ Syccess::Validator::Regex - A validator to check with a regex
 
 =head1 VERSION
 
-version 0.100
+version 0.101
 
 =head1 SYNOPSIS
 
