@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Field::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess field
-$Syccess::Field::VERSION = '0.101';
+$Syccess::Field::VERSION = '0.102';
 use Moo;
 use Module::Runtime qw( use_module );
 use Module::Load::Conditional qw( can_load );
@@ -86,8 +86,15 @@ sub _build_validators {
   return [ @validators ];
 }
 
+has load_class_cache => (
+  is => 'ro',
+  init_arg => undef,
+  default => sub {{}},
+);
+
 sub load_class_by_key {
   my ( $self, $key ) = @_;
+  return $self->load_class_cache->{$key} if defined $self->load_class_cache->{$key};
   my $class;
   if ($key =~ m/::/) {
     if (can_load( modules => { $key, 0 } )) {
@@ -107,7 +114,7 @@ sub load_class_by_key {
     }
   }
   die __PACKAGE__." can't load validator for ".$key unless $class;
-  return use_module($class);
+  return $self->load_class_cache->{$key} = use_module($class);
 }
 
 sub validate {
@@ -132,7 +139,7 @@ Syccess::Field - Syccess field
 
 =head1 VERSION
 
-version 0.101
+version 0.102
 
 =head1 DESCRIPTION
 

@@ -50,7 +50,7 @@
          "web" : "https://github.com/SyContent/Syccess"
       }
    },
-   "version" : "0.101",
+   "version" : "0.102",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018001"

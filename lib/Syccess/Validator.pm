@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess validator
-$Syccess::Validator::VERSION = '0.101';
+$Syccess::Validator::VERSION = '0.102';
 use Moo::Role;
 
 requires qw(
@@ -35,7 +35,7 @@ Syccess::Validator - Syccess validator
 
 =head1 VERSION
 
-version 0.101
+version 0.102
 
 =head1 SYNOPSIS
 
@@ -77,11 +77,11 @@ By default, the argument for the validator will be stored in L</arg>, except
 if its a HashRef, in this case, it will be dereferenced and be used as
 arguments for the creation of the validator. Which means:
 
-  SyForm->new( fields => [ myfield => [ length => 4 ] ] );
+  Syccess->new( fields => [ myfield => [ length => 4 ] ] );
 
 is the same as doing:
 
-  SyForm->new( fields => [ myfield => [ length => { arg => 4 } ] ] );
+  Syccess->new( fields => [ myfield => [ length => { arg => 4 } ] ] );
 
 This way allows to mix complex and straight forward usages. The core validator
 L<Syccess::Validator::Length> is a very good example for this.

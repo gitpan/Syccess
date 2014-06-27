@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::ValidatorSimple::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess validator
-$Syccess::ValidatorSimple::VERSION = '0.101';
+$Syccess::ValidatorSimple::VERSION = '0.102';
 use Moo::Role;
 
 with qw(
@@ -47,7 +47,7 @@ Syccess::ValidatorSimple - Syccess validator
 
 =head1 VERSION
 
-version 0.101
+version 0.102
 
 =head1 SYNOPSIS
 
@@ -81,6 +81,9 @@ can override this behaviour by overloading the functions B<missing_ok>,
 B<undef_ok> or B<empty_ok> with a sub that returns a false value. Then this
 specific case will still be dispatched to the B<validator> function and can
 then there produce an error, or not ;).
+
+If the value is missing, then B<@_> will only contain a reference to the
+validator object, but no value itself (if you override B<missing_ok>).
 
 =encoding utf8
 
