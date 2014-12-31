@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Result::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validation process result
-$Syccess::Result::VERSION = '0.102';
+$Syccess::Result::VERSION = '0.103';
 use Moo;
 use Module::Runtime qw( use_module );
 
@@ -122,7 +122,7 @@ Syccess::Result - A validation process result
 
 =head1 VERSION
 
-version 0.102
+version 0.103
 
 =head1 DESCRIPTION
 

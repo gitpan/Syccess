@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Validator::Call::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: A validator to check via call to a method
-$Syccess::Validator::Call::VERSION = '0.102';
+$Syccess::Validator::Call::VERSION = '0.103';
 use Moo;
 use Carp qw( croak );
 
@@ -56,7 +56,7 @@ Syccess::Validator::Call - A validator to check via call to a method
 
 =head1 VERSION
 
-version 0.102
+version 0.103
 
 =head1 SYNOPSIS
 

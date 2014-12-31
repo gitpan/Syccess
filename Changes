@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1740-09-12 00:00:00 +0000 to present.
+Changes from 1741-03-18 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.102 at 2014-06-27 21:38:45 +0000
+version 0.103 at 2014-12-31 22:46:08 +0000
 ------------------------------------------
+
+  Change: fdf0e258ada0e33c30306a8ef7a04b3acd7aaff9
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-12-31 23:45:12 +0000
+
+    Fixed dzil config, new travis yml 
 
   Change: 584683bbe6798d88bfb3e226de0eec254a07119f
   Author: Torsten Raudssus <torsten@raudss.us>

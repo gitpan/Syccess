@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::ValidatorSimple::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess validator
-$Syccess::ValidatorSimple::VERSION = '0.102';
+$Syccess::ValidatorSimple::VERSION = '0.103';
 use Moo::Role;
 
 with qw(
@@ -47,7 +47,7 @@ Syccess::ValidatorSimple - Syccess validator
 
 =head1 VERSION
 
-version 0.102
+version 0.103
 
 =head1 SYNOPSIS
 

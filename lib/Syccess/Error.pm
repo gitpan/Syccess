@@ -3,7 +3,7 @@ BEGIN {
   $Syccess::Error::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: Syccess error message
-$Syccess::Error::VERSION = '0.102';
+$Syccess::Error::VERSION = '0.103';
 use Moo;
 
 with qw(
@@ -58,7 +58,7 @@ Syccess::Error - Syccess error message
 
 =head1 VERSION
 
-version 0.102
+version 0.103
 
 =head1 DESCRIPTION
 
